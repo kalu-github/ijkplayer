@@ -1390,8 +1390,7 @@ drain_output_buffer2_l(JNIEnv *env, IJKFF_Pipenode *node, int64_t timeUs, int *d
                                                                   timeUs);
     if(opaque->acodec == NULL){
         PLAYER_ALOGE("SDL_AMediaCodecFake_dequeueOutputBuffer acodec is null");
-        ret = 0;
-        goto fail;
+        return 0;
     }
     if (output_buffer_index == AMEDIACODEC__INFO_OUTPUT_BUFFERS_CHANGED) {
         PLAYER_ALOGD("AMEDIACODEC__INFO_OUTPUT_BUFFERS_CHANGED\n");
